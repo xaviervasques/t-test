@@ -17,8 +17,7 @@ There are three main types of t-test:
 - A One sample t-test tests the mean of a single group against a known mean.
 
 4. Calculate the t-statistic 
-
-/Users/xaviervasques/Desktop/GitHub/t-test/Screenshot 2019-03-10 at 23.03.42.png
+![alt text](/Users/xaviervasques/Desktop/GitHub/t-test/Screenshot 2019-03-10 at 23.03.42.png)
 
 where M is the mean of each group, n the number of scores per group, S is the standard deviation. 
 
@@ -31,6 +30,23 @@ We therefore use a table to calculate the critical t-value:
 5. Compare the critical t-values with the calculated t statistic
 If the calculated t-statistic is greater than the critical t-value, the test concludes that there is a statistically significant difference between the two populations. Therefore, you reject the null hypothesis that there is no statistically significant difference between the two populations.
 
+In the t-test comparing the means of two independent samples, the following assumptions should be met:
 
-source: https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f
+Mean of the two populations being compared should follow a normal distribution. This can be tested using a normality test, such as the Shapiro–Wilk or Kolmogorov–Smirnov test, or it can be assessed graphically using a normal quantile plot.
+
+The two populations being compared should have the same variance (testable using F-test, Levene's test, Bartlett's test, or the Brown–Forsythe test; or assessable graphically using a Q–Q plot). If the sample sizes in the two groups being compared are equal, Student's original t-test is highly robust to the presence of unequal variances. Welch's t-test is insensitive to equality of the variances regardless of whether the sample sizes are similar.
+
+6. How to use it
+Install numpy and scipy
+    pip install numpy
+    pip install scipy
+    
+Fill the data of your groups in a and b variables
+
+Use ttest.py or ttest_scipy.py to use sciPy package 
+    python ttest.py
+
+Source
+https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f
+https://en.wikipedia.org/wiki/Student%27s_t-test
 

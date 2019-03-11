@@ -1,51 +1,36 @@
 ## updated by Xavier Vasques
-
 ## Import the packages
 import numpy as np
 from scipy import stats
 
-
-## Define 2 random distributions
+## Define 2 groups with their respective data
 #Sample Size
-N = 10
-#Gaussian distributed data with mean = 2 and var = 1
-a = np.random.randn(N) + 2
-#Gaussian distributed data with with mean = 0 and var = 1
-b = np.random.randn(N)
-
+N = 10.0
+#Data of group 1
+a = np.array([42.1, 80.0, 30.0, 45.8, 57.7, 80.0, 82.4, 66.2, 66.9, 79.0])
+#Data of group 2
+b = np.array([80.7, 85.1, 88.6, 81.7, 69.8, 79.5, 107.2, 69.3, 80.9, 63.0])
 
 ## Calculate the Standard Deviation
 #Calculate the variance to get the standard deviation
 
-#For unbiased max likelihood estimate we have to divide the var by N-1, and therefore the parameter ddof = 1
-var_a = a.var(ddof=1)
-var_b = b.var(ddof=1)
+var_a = a.var(ddof=1.0)
+var_b = b.var(ddof=1.0)
 
 #std deviation
-s = np.sqrt((var_a + var_b)/2)
-s
-
-
+s = np.sqrt((var_a + var_b)/2.0)
 
 ## Calculate the t-statistics
-t = (a.mean() - b.mean())/(s*np.sqrt(2/N))
-
-
+t = (a.mean() - b.mean())/(s*np.sqrt(2.0/N))
 
 ## Compare with the critical t-value
 #Degrees of freedom
-df = 2*N - 2
+df = len(a) + len(b) - 2.0
 
 #p-value after comparison with the t
-p = 1 - stats.t.cdf(t,df=df)
-
+p = stats.t.cdf(t,df=df)
 
 print("t = " + str(t))
-print("p = " + str(2*p))
-### You can see that after comparing the t statistic with the critical t value (computed internally) we get a good p value of 0.0005 and thus we reject the null hypothesis and thus it proves that the mean of the two distributions are different and statistically significant.
+print("p = " + str(2.0*p))
 
 
-## Cross Checking with the internal scipy function
-t2, p2 = stats.ttest_ind(a,b)
-print("t = " + str(t2))
-print("p = " + str(p2))
