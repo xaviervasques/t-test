@@ -17,7 +17,7 @@ There are three main types of t-test:
 - A One sample t-test tests the mean of a single group against a known mean.
 
 4. Calculate the t-statistic 
-![alt text](/Users/xaviervasques/Desktop/GitHub/t-test/Screenshot 2019-03-10 at 23.03.42.png)
+![alt text](https://github.com/xaviervasques/t-test/blob/master/Images/formula.png)
 
 where M is the mean of each group, n the number of scores per group, S is the standard deviation. 
 
@@ -25,7 +25,7 @@ We also have to choose alpha, typically 0.05. This means that there is 95% confi
 
 We therefore use a table to calculate the critical t-value:
 
-/Users/xaviervasques/Desktop/GitHub/t-test/Screenshot 2019-03-10 at 23.08.19.png
+![alt text](https://github.com/xaviervasques/t-test/blob/master/Images/table.png)
 
 5. Compare the critical t-values with the calculated t statistic
 If the calculated t-statistic is greater than the critical t-value, the test concludes that there is a statistically significant difference between the two populations. Therefore, you reject the null hypothesis that there is no statistically significant difference between the two populations.
