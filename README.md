@@ -51,6 +51,8 @@ Use ttest.py or ttest_scipy.py to use sciPy package
 python ttest.py
 
 Source
+
 https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f
+
 https://en.wikipedia.org/wiki/Student%27s_t-test
 
