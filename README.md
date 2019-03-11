@@ -37,14 +37,18 @@ Mean of the two populations being compared should follow a normal distribution. 
 The two populations being compared should have the same variance (testable using F-test, Levene's test, Bartlett's test, or the Brown–Forsythe test; or assessable graphically using a Q–Q plot). If the sample sizes in the two groups being compared are equal, Student's original t-test is highly robust to the presence of unequal variances. Welch's t-test is insensitive to equality of the variances regardless of whether the sample sizes are similar.
 
 6. How to use it
+
 Install numpy and scipy
-    pip install numpy
-    pip install scipy
+
+pip install numpy
+
+pip install scipy
     
 Fill the data of your groups in a and b variables
 
 Use ttest.py or ttest_scipy.py to use sciPy package 
-    python ttest.py
+
+python ttest.py
 
 Source
 https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f
